@@ -1,0 +1,21 @@
+en
+config t
+host Host
+enable secret CLASS
+line con 0
+password CISCO
+line vty 0 15
+password CISCO
+login
+Banner motd *Unauthorized Access Prohibited*
+service pass
+no ip domain look
+security pass min 5
+username Admin secret CISCO
+ip domain-name cisco.com
+crypt key gen rsa
+1024
+line vty 0 15
+login local
+transport input ssh
+ipv6 unicast
